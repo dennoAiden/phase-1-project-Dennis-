@@ -1,0 +1,114 @@
+{
+    "components": [
+      {
+        "id": 1,
+        "name": "Resistor",
+        "specifications": {
+          "resistance": "10kΩ",
+          "powerRating": "0.25W",
+          "tolerance": "5%"
+        },
+        "price": "$0.10",
+        "image": "image/resistor.png"
+      },
+      {
+        "id": 2,
+        "name": "Capacitor",
+        "specifications": {
+          "capacitance": "2200uF",
+          "voltageRating": "16V",
+          "tolerance": "10%"
+        },
+        "price": "$0.15",
+        "image": "image/capacitor.jpeg"
+      },
+      {
+        "id": 3,
+        "name": "Inductor",
+        "specifications": {
+          "inductance": "10mH",
+          "currentRating": "0.5A",
+          "tolerance": "10%"
+        },
+        "price": "$0.20",
+        "image": "image/Inductor.jpeg"
+      },
+      {
+        "id": 4,
+        "name": "Diode",
+        "specifications": {
+          "forwardVoltage": "0.7V",
+          "currentRating": "1A"
+        },
+        "price": "$0.05",
+        "image": "image/Diode.jpeg"
+      },
+      {
+        "id": 5,
+        "name": "Transistor",
+        "specifications": {
+          "type": "NPN",
+          "currentRating": "0.8A",
+          "voltageRating": "40V"
+        },
+        "price": "$0.25",
+        "image": "image/Transistor.jpeg"
+      },
+      {
+        "id": 6,
+        "name": "LED",
+        "specifications": {
+          "color": "Red",
+          "forwardVoltage": "2V",
+          "currentRating": "20mA"
+        },
+        "price": "$0.10",
+        "image": "image/LED.jpeg"
+      },
+      {
+        "id": 7,
+        "name": "Potentiometer",
+        "specifications": {
+          "resistance": "10kΩ",
+          "powerRating": "0.5W",
+          "tolerance": "20%"
+        },
+        "price": "$0.50",
+        "image": "image/potentiometer.jpeg"
+      },
+      {
+        "id": 8,
+        "name": "Switch",
+        "specifications": {
+          "type": "Toggle",
+          "currentRating": "5A",
+          "voltageRating": "250V"
+        },
+        "price": "$0.30",
+        "image": "image/toggle-switch.jpeg"
+      },
+      {
+        "id": 9,
+        "name": "Piezo Buzzer",
+        "specifications": {
+          "voltageRating": "5V",
+          "soundOutput": "85dB",
+          "frequency": "4kHz"
+        },
+        "price": "$0.40",
+        "image": "image/buzzer.jpeg"
+      },
+      {
+        "id": 10,
+        "name": "DC Motor",
+        "specifications": {
+          "voltageRating": "12V",
+          "speed": "3000 RPM",
+          "currentRating": "0.5A"
+        },
+        "price": "$3.00",
+        "image": "image/dc motor.jpeg"
+      }
+  ]
+  }
+    
