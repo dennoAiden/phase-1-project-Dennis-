@@ -17,19 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        link.addEventListener('mouseout', () => {
-            // Optionally, you can clear the content or revert to the default view
-            navContent.innerHTML = '';
-        });
+        link.addEventListener('mouseout', () => navContent.innerHTML = '');
     });
     const componentList = document.getElementById('component-list');
     const componentDetails = document.getElementById('component-details');
     const searchInput = document.getElementById('search-input');
-    const searchButton = document.getElementById('search-button');
     const purchasedComponentsList = document.getElementById('purchased-components');
 
-    let componentsData = []; // Variable to store fetched component data
-    let purchasedComponents = []; // Array to store purchased components
+    let componentsData = [];
+    let purchasedComponents = [];
 
     // Fetch and display the list of components
     fetch('http://localhost:3000/components')
@@ -40,18 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(components => {
-            componentsData = components; // Store fetched components in a variable
+            componentsData = components;
             displayComponentsList(componentsData);
         })
         .catch(error => console.error('Error fetching components:', error));
 
     // Function to display the list of components
     function displayComponentsList(components) {
-        componentList.innerHTML = ''; // Clear existing list
+        componentList.innerHTML = '';
         components.forEach(component => {
             const componentItem = document.createElement('li');
             componentItem.textContent = component.name;
-            componentItem.classList.add('component-item'); // Add a class for styling
+            componentItem.classList.add('component-item');
             componentItem.addEventListener('click', () => {
                 displayComponentDetails(component, componentItem);
             });
@@ -59,25 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
             componentList.appendChild(componentItem);
         });
     }
-
-    // Function to display component details
     function displayComponentDetails(component, clickedItem) {
-        // Remove 'active' class from previously clicked item (if any)
         const activeItem = document.querySelector('.component-item.active');
         if (activeItem) {
             activeItem.classList.remove('active');
         }
-
-        // Add 'active' class to current clicked item
         clickedItem.classList.add('active');
-
-        // Hide Buy buttons from previously displayed components
-        const buyButtons = document.querySelectorAll('.buy-button');
-        buyButtons.forEach(button => {
-            button.style.display = 'none';
-        });
-
-        // Display component details including Buy button and price
         componentDetails.innerHTML = `
             <h2>${component.name}</h2>
             <img src="${component.image}" alt="${component.name}">
@@ -88,25 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
             <p><strong>Price:</strong> ${component.price}</p>
             <button class="buy-button">Buy</button>
         `;
-
-        // Show the Buy button
         const buyButton = componentDetails.querySelector('.buy-button');
-        buyButton.style.display = 'block';
-
-        // Add event listener for Buy button
         buyButton.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent click event from bubbling to li
+            event.stopPropagation();
             buyComponent(component);
         });
     }
 
-    // Function to handle adding a component to purchased list
     function buyComponent(component) {
         purchasedComponents.push(component);
         renderPurchasedComponents();
     }
 
-    // Function to render purchased components in the sidebar
     function renderPurchasedComponents() {
         purchasedComponentsList.innerHTML = '';
         purchasedComponents.forEach(component => {
@@ -115,8 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
             purchasedComponentsList.appendChild(listItem);
         });
     }
-
-    // Function to filter components based on search term
     function filterComponents(searchTerm) {
         return componentsData.filter(component => {
             const name = (component.name || '').toLowerCase();
@@ -127,10 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return name.includes(searchTerm) || type.includes(searchTerm) || specifications.includes(searchTerm);
         });
     }
-
-    // Function to handle search
     function handleSearch() {
-        const searchTerm = searchInput.value.trim(); // Trim whitespace from search term
+        const searchTerm = searchInput.value; // Trim whitespace from search term
         const filteredComponents = filterComponents(searchTerm);
         displayComponentsList(filteredComponents);
 
@@ -141,9 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
             componentDetails.innerHTML = '<p>No components match your search.</p>';
         }
     }
-    
-
-    // Event listeners for search input and search button
-    searchInput.addEventListener('input', handleSearch);
+        searchInput.addEventListener('input', handleSearch);
     searchButton.addEventListener('click', handleSearch);
 });
