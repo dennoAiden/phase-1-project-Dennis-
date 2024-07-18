@@ -8,8 +8,8 @@
           "powerRating": "0.25W",
           "tolerance": "5%"
         },
-        "price": "$0.10",
-        "image": "image/resistor.png"
+        "price": "kes 10",
+        "image": "image/resistor.jpg"
       },
       {
         "id": 2,
@@ -19,7 +19,7 @@
           "voltageRating": "16V",
           "tolerance": "10%"
         },
-        "price": "$0.15",
+        "price": "kes 30",
         "image": "image/capacitor.jpeg"
       },
       {
@@ -30,7 +30,7 @@
           "currentRating": "0.5A",
           "tolerance": "10%"
         },
-        "price": "$0.20",
+        "price": "kes 20",
         "image": "image/Inductor.jpeg"
       },
       {
@@ -40,7 +40,7 @@
           "forwardVoltage": "0.7V",
           "currentRating": "1A"
         },
-        "price": "$0.05",
+        "price": "kes 10",
         "image": "image/Diode.jpeg"
       },
       {
@@ -51,7 +51,7 @@
           "currentRating": "0.8A",
           "voltageRating": "40V"
         },
-        "price": "$0.25",
+        "price": "kes 30",
         "image": "image/Transistor.jpeg"
       },
       {
@@ -62,7 +62,7 @@
           "forwardVoltage": "2V",
           "currentRating": "20mA"
         },
-        "price": "$0.10",
+        "price": "kes 10",
         "image": "image/LED.jpeg"
       },
       {
@@ -73,7 +73,7 @@
           "powerRating": "0.5W",
           "tolerance": "20%"
         },
-        "price": "$0.50",
+        "price": "kes 50",
         "image": "image/potentiometer.jpeg"
       },
       {
@@ -84,7 +84,7 @@
           "currentRating": "5A",
           "voltageRating": "250V"
         },
-        "price": "$0.30",
+        "price": "kes 50",
         "image": "image/toggle-switch.jpeg"
       },
       {
@@ -95,7 +95,7 @@
           "soundOutput": "85dB",
           "frequency": "4kHz"
         },
-        "price": "$0.40",
+        "price": "kes 50",
         "image": "image/buzzer.jpeg"
       },
       {
@@ -106,7 +106,7 @@
           "speed": "3000 RPM",
           "currentRating": "0.5A"
         },
-        "price": "$3.00",
+        "price": "kes 500",
         "image": "image/dc motor.jpeg"
       }
   ]
