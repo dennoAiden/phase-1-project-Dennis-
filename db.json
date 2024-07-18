@@ -1,114 +1,207 @@
 {
-    "components": [
-      {
-        "id": 1,
-        "name": "Resistor",
-        "specifications": {
-          "resistance": "10kΩ",
-          "powerRating": "0.25W",
-          "tolerance": "5%"
-        },
-        "price": "kes 10",
-        "image": "image/resistor.jpg"
+  "components": [
+    {
+      "id": 1,
+      "name": "Resistor",
+      "specifications": {
+        "resistance": "10kΩ",
+        "powerRating": "0.25W",
+        "tolerance": "5%"
       },
-      {
-        "id": 2,
-        "name": "Capacitor",
-        "specifications": {
-          "capacitance": "2200uF",
-          "voltageRating": "16V",
-          "tolerance": "10%"
-        },
-        "price": "kes 30",
-        "image": "image/capacitor.jpeg"
+      "price": "kes 10",
+      "image": "image/resistor.jpg",
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "name": "Capacitor",
+      "specifications": {
+        "capacitance": "2200uF",
+        "voltageRating": "16V",
+        "tolerance": "10%"
       },
-      {
-        "id": 3,
-        "name": "Inductor",
-        "specifications": {
-          "inductance": "10mH",
-          "currentRating": "0.5A",
-          "tolerance": "10%"
-        },
-        "price": "kes 20",
-        "image": "image/Inductor.jpeg"
+      "price": "kes 30",
+      "image": "image/capacitor.jpeg",
+      "rating": 3
+    },
+    {
+      "id": 3,
+      "name": "Inductor",
+      "specifications": {
+        "inductance": "10mH",
+        "currentRating": "0.5A",
+        "tolerance": "10%"
       },
-      {
-        "id": 4,
-        "name": "Diode",
-        "specifications": {
-          "forwardVoltage": "0.7V",
-          "currentRating": "1A"
-        },
-        "price": "kes 10",
-        "image": "image/Diode.jpeg"
+      "price": "kes 20",
+      "image": "image/Inductor.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Diode",
+      "specifications": {
+        "forwardVoltage": "0.7V",
+        "currentRating": "1A"
       },
-      {
-        "id": 5,
-        "name": "Transistor",
-        "specifications": {
-          "type": "NPN",
-          "currentRating": "0.8A",
-          "voltageRating": "40V"
-        },
-        "price": "kes 30",
-        "image": "image/Transistor.jpeg"
+      "price": "kes 10",
+      "image": "image/Diode.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Transistor",
+      "specifications": {
+        "type": "NPN",
+        "currentRating": "0.8A",
+        "voltageRating": "40V"
       },
-      {
-        "id": 6,
-        "name": "LED",
-        "specifications": {
-          "color": "Red",
-          "forwardVoltage": "2V",
-          "currentRating": "20mA"
-        },
-        "price": "kes 10",
-        "image": "image/LED.jpeg"
+      "price": "kes 30",
+      "image": "image/Transistor.jpeg",
+      "rating": 4
+    },
+    {
+      "id": 6,
+      "name": "LED",
+      "specifications": {
+        "color": "Red",
+        "forwardVoltage": "2V",
+        "currentRating": "20mA"
       },
-      {
-        "id": 7,
-        "name": "Potentiometer",
-        "specifications": {
-          "resistance": "10kΩ",
-          "powerRating": "0.5W",
-          "tolerance": "20%"
-        },
-        "price": "kes 50",
-        "image": "image/potentiometer.jpeg"
+      "price": "kes 10",
+      "image": "image/LED.jpeg",
+      "rating": 3
+    },
+    {
+      "id": 7,
+      "name": "Potentiometer",
+      "specifications": {
+        "resistance": "10kΩ",
+        "powerRating": "0.5W",
+        "tolerance": "20%"
       },
-      {
-        "id": 8,
-        "name": "Switch",
-        "specifications": {
-          "type": "Toggle",
-          "currentRating": "5A",
-          "voltageRating": "250V"
-        },
-        "price": "kes 50",
-        "image": "image/toggle-switch.jpeg"
+      "price": "kes 50",
+      "image": "image/potentiometer.jpeg"
+    },
+    {
+      "id": 8,
+      "name": "Switch",
+      "specifications": {
+        "type": "Toggle",
+        "currentRating": "5A",
+        "voltageRating": "250V"
       },
-      {
-        "id": 9,
-        "name": "Piezo Buzzer",
-        "specifications": {
-          "voltageRating": "5V",
-          "soundOutput": "85dB",
-          "frequency": "4kHz"
-        },
-        "price": "kes 50",
-        "image": "image/buzzer.jpeg"
+      "price": "kes 50",
+      "image": "image/toggle-switch.jpeg"
+    },
+    {
+      "id": 9,
+      "name": "Piezo Buzzer",
+      "specifications": {
+        "voltageRating": "5V",
+        "soundOutput": "85dB",
+        "frequency": "4kHz"
       },
-      {
-        "id": 10,
-        "name": "DC Motor",
-        "specifications": {
-          "voltageRating": "12V",
-          "speed": "3000 RPM",
-          "currentRating": "0.5A"
-        },
-        "price": "kes 500",
-        "image": "image/dc motor.jpeg"
-      }
+      "price": "kes 50",
+      "image": "image/buzzer.jpeg"
+    },
+    {
+      "id": 10,
+      "name": "DC Motor",
+      "specifications": {
+        "voltageRating": "12V",
+        "speed": "3000 RPM",
+        "currentRating": "0.5A"
+      },
+      "price": "kes 500",
+      "image": "image/dc motor.jpeg",
+      "rating": 4
+    },
+    {
+      "name": "Relay",
+      "specifications": {
+        "coilVoltage": "12 V DC",
+        "contactCurrentRating": "10 A",
+        "contactVoltageRating": "250 V AC",
+        "type": "SPDT"
+      },
+      "price": "kes 150",
+      "image": "image/12v relay.jpeg",
+      "rating": 4
+    },
+    {
+      "name": "Microcontroller",
+      "specifications": {
+        "model": "ATmega328P",
+        "operatingVoltage": "5 V",
+        "flashMemory": "32 KB",
+        "SRAM": "2 KB"
+      },
+      "price": "kes 300",
+      "image": "image/Atmega.jpeg",
+      "rating": 4
+    },
+    {
+      "name": "IC",
+      "specifications": {
+        "model": "555 Timer",
+        "operatingVoltage": "4.5-15 V",
+        "package": "DIP-8"
+      },
+      "price": "kes 50",
+      "image": "image/555 ic.jpeg",
+      "rating": 4
+    },
+    {
+      "name": "Fuse",
+      "specifications": {
+        "currentRating": "1 A",
+        "voltageRating": "250 V",
+        "type": "Glass Cartridge"
+      },
+      "price": "kes 5",
+      "image": "image/fuse.jpeg",
+      "rating": 3
+    },
+    {
+      "name": "Voltage Regulator",
+      "specifications": {
+        "outputVoltage": "5 V",
+        "currentRating": "1 A",
+        "model": "LM7805"
+      },
+      "price": "kes 50",
+      "image": "image/voltage regulator.jpeg",
+      "rating": 4
+    },
+    {
+      "name": "LDR",
+      "specifications": {
+        "resistance": "10 kΩ (in dark)",
+        "resistanceInLight": "1 kΩ"
+      },
+      "price": "kes 20",
+      "image": "image/LDR.jpeg",
+      "rating": 4
+    },
+    {
+      "name": "Push Button",
+      "specifications": {
+        "currentRating": "100 mA",
+        "voltageRating": "24 V",
+        "type": "Latching"
+      },
+      "price": "kes 15",
+      "image": "image/push.b.jpeg",
+      "rating": 5
+    },
+    {
+      "name": "Temperature Sensor",
+      "specifications": {
+        "model": "LM35",
+        "voltageRating": "5 V",
+        "temperatureRange": "-55°C to 150°C"
+      },
+      "price": "kes 15",
+      "image": "image/temp sensor.jpeg",
+      "rating": 5
+    }
   ]
-  }
-    
+}

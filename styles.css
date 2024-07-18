@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #09e460;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -146,4 +146,41 @@ main section, main aside {
 #sidebar ul li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header input[type="text"] {
+        width: 90%;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul {
+        text-align: center;
+    }
+
+    header input[type="text"] {
+        width: 95%;
+    }
+
+    main section, main aside {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #component-details, #sidebar, #rating-section {
+        padding: 10px;
+    }
+
+    #component-details .buy-button {
+        width: 90%;
+    }
 }

@@ -19,15 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         link.addEventListener('mouseout', () => navContent.innerHTML = '');
     });
+
     const componentList = document.getElementById('component-list');
     const componentDetails = document.getElementById('component-details');
     const searchInput = document.getElementById('search-input');
     const purchasedComponentsList = document.getElementById('purchased-components');
+    const ratingSection = document.getElementById('rating-section');
+    const ratingComponentName = document.getElementById('rating-component-name');
+    const ratingInput = document.getElementById('rating-input');
+    const submitRatingButton = document.getElementById('submit-rating');
 
     let componentsData = [];
     let purchasedComponents = [];
 
-    // Fetch and display the list of components
     fetch('http://localhost:3000/components')
         .then(response => {
             if (!response.ok) {
@@ -40,8 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             displayComponentsList(componentsData);
         })
         .catch(error => console.error('Error fetching components:', error));
-
-    // Function to display the list of components
     function displayComponentsList(components) {
         componentList.innerHTML = '';
         components.forEach(component => {
@@ -55,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             componentList.appendChild(componentItem);
         });
     }
+
     function displayComponentDetails(component, clickedItem) {
         const activeItem = document.querySelector('.component-item.active');
         if (activeItem) {
@@ -88,31 +91,70 @@ document.addEventListener('DOMContentLoaded', () => {
         purchasedComponents.forEach(component => {
             const listItem = document.createElement('li');
             listItem.textContent = component.name;
+            listItem.classList.add('purchased-component');
+            listItem.addEventListener('click', () => {
+                rateComponent(component);
+            });
             purchasedComponentsList.appendChild(listItem);
         });
     }
+
     function filterComponents(searchTerm) {
         return componentsData.filter(component => {
             const name = (component.name || '').toLowerCase();
             const type = (component.type || '').toLowerCase();
             const specifications = Object.values(component.specifications || {}).join(' ').toLowerCase();
-            
-            searchTerm = (searchTerm || '').toLowerCase().trim(); // Ensure searchTerm is defined and lowercase
+
+            searchTerm = (searchTerm || '').toLowerCase().trim();
             return name.includes(searchTerm) || type.includes(searchTerm) || specifications.includes(searchTerm);
         });
     }
+
     function handleSearch() {
-        const searchTerm = searchInput.value; // Trim whitespace from search term
+        const searchTerm = searchInput.value;
         const filteredComponents = filterComponents(searchTerm);
         displayComponentsList(filteredComponents);
 
-        // If there are filtered components, display the details of the first one
         if (filteredComponents.length > 0) {
             displayComponentDetails(filteredComponents[0]);
         } else {
             componentDetails.innerHTML = '<p>No components match your search.</p>';
         }
     }
-        searchInput.addEventListener('input', handleSearch);
-    searchButton.addEventListener('click', handleSearch);
+
+    searchInput.addEventListener('input', handleSearch);
+
+    function rateComponent(component) {
+        ratingComponentName.textContent = component.name;
+        ratingSection.style.display = 'block';
+
+        submitRatingButton.onclick = function() {
+            const rating = parseInt(ratingInput.value);
+            if (rating >= 1 && rating <= 5) {
+                component.rating = rating;
+                updateComponentRating(component);
+            }
+        };
+    }
+
+    function updateComponentRating(component) {
+        fetch(`http://localhost:3000/components/${component.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ rating: component.rating })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(updatedComponent => {
+            console.log('Component rating updated:', updatedComponent);
+            ratingSection.style.display = 'none';
+        })
+        .catch(error => console.error('Error updating component rating:', error));
+    }
 });
