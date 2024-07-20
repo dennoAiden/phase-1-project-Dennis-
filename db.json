@@ -10,7 +10,7 @@
       },
       "price": "kes 10",
       "image": "image/resistor.jpg",
-      "rating": 4
+      "rating": 5
     },
     {
       "id": 2,
@@ -78,7 +78,8 @@
         "tolerance": "20%"
       },
       "price": "kes 50",
-      "image": "image/potentiometer.jpeg"
+      "image": "image/potentiometer.jpeg",
+      "rating": 4
     },
     {
       "id": 8,
@@ -115,6 +116,7 @@
       "rating": 4
     },
     {
+      "id": 11,
       "name": "Relay",
       "specifications": {
         "coilVoltage": "12 V DC",
@@ -127,6 +129,7 @@
       "rating": 4
     },
     {
+      "id": 12,
       "name": "Microcontroller",
       "specifications": {
         "model": "ATmega328P",
@@ -139,6 +142,7 @@
       "rating": 4
     },
     {
+      "id": 13,
       "name": "IC",
       "specifications": {
         "model": "555 Timer",
@@ -150,6 +154,7 @@
       "rating": 4
     },
     {
+      "id": 14,
       "name": "Fuse",
       "specifications": {
         "currentRating": "1 A",
@@ -161,6 +166,7 @@
       "rating": 3
     },
     {
+      "id": 15,
       "name": "Voltage Regulator",
       "specifications": {
         "outputVoltage": "5 V",
@@ -172,6 +178,7 @@
       "rating": 4
     },
     {
+      "id": 16,
       "name": "LDR",
       "specifications": {
         "resistance": "10 kΩ (in dark)",
@@ -182,6 +189,7 @@
       "rating": 4
     },
     {
+      "id": 17,
       "name": "Push Button",
       "specifications": {
         "currentRating": "100 mA",
@@ -193,6 +201,7 @@
       "rating": 5
     },
     {
+      "id": 18,
       "name": "Temperature Sensor",
       "specifications": {
         "model": "LM35",
